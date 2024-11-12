@@ -8,13 +8,19 @@ package db_connection;
  *
  * @author felip
  */
-public class DB_Connection {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public abstract class DB_Connection {
     
+    protected final static String DB_URL = "jdbc:mysql//localhost:";
+    protected final static String USER = "root";
+    protected final static String PASSWORD = "password";
+    // This schema name may or may not be created
+    protected final static String DB_NAME = "hospital";
+    protected final static String TABLE = "patient_data";
+    
+    // Now we create the final Database URL with the schema name
+    protected final static String DB_BASE_URL = DB_URL + "/" + DB_NAME;
+            
+    
+
+
 }
