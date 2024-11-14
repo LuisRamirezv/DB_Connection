@@ -38,14 +38,28 @@ public class DatabaseSetup extends DB_Connection {
                 // Create a statement (query)
                 Statement stmt = conn.createStatement();
             ){
-            // We have to create the query here (Statement)
-            stmt.execute("CREATE IF NOT EXISTS");
-        
-        
-        
+                // We have to create the query here (Statement)
+                stmt.execute("CREATE IF NOT EXISTS " + DB_NAME + ";"); // here we create de database
+                // Query the db using the USE
+                stmt.execute("USE " + DB_NAME +";"); // Database (Schema) pointer
+                // Create a query to insert into the db
+                String sql = // here we create de table with columns and their names
+
+                        "CREATE TABE IF NOT EXIST " + TABLE + " ( " 
+                        + "name VARCAR(255), "
+                        + "birthdate DATE, "
+                        + "bloodType VARCHAR(2), "
+                        + "id INT(10)"
+                        + ");";
+                stmt.execute(sql);
+                return true;
+            }catch(Exception e){
+                e.printStackTrace();
+                return false;
+                 
             }
     
-    
+        
     }
     
     // Create some logic to ensure we do not run into issues with the

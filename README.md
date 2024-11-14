@@ -3,6 +3,7 @@
 ### Key words:
 - Abstract class
 - Protected attributes
+- static attributes
 
 ### SQL Syntax
 
@@ -88,14 +89,25 @@ such as the columns
             + "id INT(10)"
             + ");";
 ```
+## Creating the patient class
 
+Creating attributes the class patient.
 
+```java
+    private String name;
+    private String birthDate;
+    private String bloodType;
+    private int patientID;
+```
+Create a static attributes.
+This will be shared by all the objects withing the class
 
-
-
-
-
-
+```java
+private static int currentID = 1;
+```
+Creating two constructor.
+One will be the patient data, and the second one when adding a 
+patient tothe database.
 
 
 
